@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations;
 using System.Web.DynamicData;
@@ -10,17 +10,18 @@ namespace Kampanjer
 {
     public partial class Url_EditField : System.Web.DynamicData.FieldTemplateUserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (Column.MaxLength < 20)
-            {
-                TextBox1.Columns = Column.MaxLength;
-            }
+		protected void Page_Init(object sender, EventArgs e) {
             TextBox1.ToolTip = Column.Description;
+			Label1.Text = Column.DisplayName;
+        }
 
-            SetUpValidator(RequiredFieldValidator1);
-            SetUpValidator(RegularExpressionValidator1);
-            SetUpValidator(DynamicValidator1);
+		// show bootstrap has-error
+		protected void Page_PreRender(object sender, EventArgs e)
+        {
+            // if validation error then apply bootstrap has-error CSS class
+            var isValid = this.Page.ModelState.IsValidField(Column.Name);
+            Div1.Attributes["class"] = isValid ? "form-group" : "form-group has-error";
+
         }
 
         protected override void OnDataBinding(EventArgs e)
@@ -44,6 +45,5 @@ namespace Kampanjer
                 return TextBox1;
             }
         }
-
     }
 }

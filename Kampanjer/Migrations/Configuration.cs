@@ -5,14 +5,14 @@ namespace Kampanjer.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Kampanjer.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Kampanjer.Models.KampanjeContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Kampanjer.Models.ApplicationDbContext context)
+        protected override void Seed(Kampanjer.Models.KampanjeContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -172,9 +172,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DynamicData\EntityTemplates\Default.ascx" />
-    <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
-    <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
@@ -188,8 +185,6 @@
     <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
     <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Text.ascx" />
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
@@ -251,7 +246,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -437,27 +434,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.designer.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.designer.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.designer.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-    </Compile>
     <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
       <DependentUpon>Boolean.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -548,20 +524,6 @@
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
       <DependentUpon>Integer_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
       <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
@@ -678,14 +640,15 @@
     <Compile Include="Keywords\Insert.aspx.designer.cs">
       <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511041432151_nyversjon.cs" />
-    <Compile Include="Migrations\201511041432151_nyversjon.Designer.cs">
-      <DependentUpon>201511041432151_nyversjon.cs</DependentUpon>
+    <Compile Include="Migrations\201511150911128_initial.cs" />
+    <Compile Include="Migrations\201511150911128_initial.Designer.cs">
+      <DependentUpon>201511150911128_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contacts.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemKeyword.cs" />
+    <Compile Include="Models\KampanjeContext.cs" />
     <Compile Include="Models\Keywords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -715,8 +678,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511041432151_nyversjon.resx">
-      <DependentUpon>201511041432151_nyversjon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511150911128_initial.resx">
+      <DependentUpon>201511150911128_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

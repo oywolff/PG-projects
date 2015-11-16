@@ -11,7 +11,7 @@ namespace Kampanjer.Keywords
 {
     public partial class Default : System.Web.UI.Page
     {
-		protected Kampanjer.Models.ApplicationDbContext _db = new Kampanjer.Models.ApplicationDbContext();
+		protected Kampanjer.Models.KampanjeContext _db = new Kampanjer.Models.KampanjeContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
